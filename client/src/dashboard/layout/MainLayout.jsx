@@ -14,8 +14,7 @@ const MainLayout = () => {
                     <Outlet></Outlet>
                     </div>
                 </div>
-            </div>
-            
+            </div> 
         </div>
     );
 };
