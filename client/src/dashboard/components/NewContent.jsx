@@ -1,39 +1,19 @@
-import { Link } from "react-router-dom";
 import { FaEye, FaEdit, FaTrash } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
-const AdminIndex = () => {
+const NewContent = () => {
     return (
-        <div className="mt-2">
-            <div className="grid grid-cols-5 gap-x-4">
-                <div className="w-full p-8 flex justify-center flex-col rounded-md items-center gap-y-2 bg-white text-slate-700 " >
-                    <span className="text-xl font-bold">50</span>
-                    <span className="text-sm">Total News</span>
-                </div>
-                <div className="w-full p-8 flex justify-center flex-col rounded-md items-center gap-y-2 bg-white text-slate-700 " >
-                    <span className="text-xl font-bold">50</span>
-                    <span className="text-sm">Pending News</span>
-                </div>
-                <div className="w-full p-8 flex justify-center flex-col rounded-md items-center gap-y-2 bg-white text-slate-700 " >
-                    <span className="text-xl font-bold">50</span>
-                    <span className="text-sm">Active News</span>
-                </div>
-                <div className="w-full p-8 flex justify-center flex-col rounded-md items-center gap-y-2 bg-white text-slate-700 " >
-                    <span className="text-xl font-bold">50</span>
-                    <span className="text-sm">Deactive News</span>
-                </div>
-                <div className="w-full p-8 flex justify-center flex-col rounded-md items-center gap-y-2 bg-white text-slate-700 " >
-                    <span className="text-xl font-bold">50</span>
-                    <span className="text-sm">Writers</span>
-                </div>
-
+        <div>
+            <div className='px-4 py-3 flex gap-x-3'>
+                <select name="" className='px-3 py-2 rounded-md outline-0 border border-gray-300 focus:border-green-500 h-10' id="">
+                    <option value="">---select type---</option>
+                    <option value="pending">Pending</option>
+                    <option value="active">Active</option>
+                    <option value="deactive">Deactive</option>
+                </select>
+                <input type="text" placeholder='search news' className='px-3 py-2 rounded-md outline-0 border border-gray-300 focus:border-green-500 h-10' />
             </div>
-            <div className="bg-white p-4 mt-5">
-                <div className="flex justify-between items-center pb-4">
-                    <h2>Recent news</h2>
-                    <Link>View all</Link>
-                </div>
-                
-                <div className='relative overflow-x-auto p-4'>
+            <div className='relative overflow-x-auto p-4'>
                 <table className='w-full text-sm text-left text-slate-600'>
                     <thead className='text-xs text-gray-700 uppercase bg-gray-50'>
                         <tr>
@@ -44,13 +24,12 @@ const AdminIndex = () => {
                             <th className='px-7 py-3'>Description</th>
                             <th className='px-7 py-3'>Date</th>
                             <th className='px-7 py-3'>Status</th>
-                            <th className='px-7 py-3'>Action</th>
+                            <th className='px-7 py-3'>Active</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {
-                            [1,2,3,4,5,6].map((n,i)=><tr key={i} className='bg-white border-b' >
-                            <td className='px-6 py-4'>{i+1}</td>
+                        <tr className='bg-white border-b' >
+                            <td className='px-6 py-4'>1</td>
                             <td className='px-6 py-4'>India gets its longest glass b...</td>
                             <td className='px-6 py-4'>
                                 <img className='w-[40px] h-[40px]' src="https://res.cloudinary.com/dpj4vsqbo/image/upload/v1696952625/news/g7ihrhbxqdg5luzxtd9y.webp" alt="" />
@@ -68,14 +47,28 @@ const AdminIndex = () => {
                                     <div className='p-[6px] bg-red-500 rounded hover:shadow-lg hover:shadow-red-500/50'><FaTrash /></div>
                                 </div>
                             </td>
-                        </tr>)
-                        }
+                        </tr>
                     </tbody>
                 </table>
             </div>
+            <div className='flex items-center justify-end gap-x-3 text-slate-600'>
+                <div className='flex gap-x-3 justify-center items-center'>
+                    <p className='px-4 py-3 font-semibold text-sm'>News per page</p>
+                    <select type="text" name="category" id="category" placeholder="Name" className="px-3 py-2 rounded-md outline-0 border-gray-300 focus:border-green-500 border-2 h-10">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                                
+                    </select>
+                </div>
+                <p className='px-6 py-3 font-semibold text-sm'>6/22 - of 5</p>
+                <div className='flex items-center gap-x-3'>
+                    
+                </div>
             </div>
         </div>
     );
 };
 
-export default AdminIndex;
+export default NewContent;
