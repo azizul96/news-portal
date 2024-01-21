@@ -1,4 +1,5 @@
 import { FaEye, FaEdit, FaTrash } from 'react-icons/fa'
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import { Link } from 'react-router-dom'
 
 const NewContent = () => {
@@ -64,7 +65,8 @@ const NewContent = () => {
                 </div>
                 <p className='px-6 py-3 font-semibold text-sm'>6/22 - of 5</p>
                 <div className='flex items-center gap-x-3'>
-                    
+                    <IoIosArrowBack className="w-5 h-5 cursor-pointer"/>
+                    <IoIosArrowForward className="w-5 h-5 cursor-pointer"/>
                 </div>
             </div>
         </div>
